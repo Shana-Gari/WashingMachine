@@ -13,9 +13,8 @@ services:
         value: https://washing-machine-frontend.onrender.com
     region: ohio
 
-  - type: web
+  - type: static
     name: washing-machine-frontend
-    runtime: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
@@ -23,8 +22,7 @@ services:
         fromService:
           type: web
           name: washing-machine-backend
-          property: url
-    region: ohio
+          property: host
 
 databases:
   - name: washing-machine-db
