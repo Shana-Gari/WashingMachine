@@ -3,7 +3,9 @@ import axios from 'axios';
 import { Upload, Plus, Save } from 'lucide-react';
 import ClothCard from '../components/ClothCard';
 
-const API_URL = 'http://127.0.0.1:8000';
+import config from '../config';
+
+const API_URL = config.API_URL;
 
 const AdminPage = () => {
     const [clothes, setClothes] = useState([]);

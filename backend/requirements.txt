@@ -5,3 +5,5 @@ python-multipart
 numpy
 scikit-fuzzy
 scipy
+gunicorn
+psycopg2-binary

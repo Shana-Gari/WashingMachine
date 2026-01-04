@@ -4,7 +4,9 @@ import { Play, RotateCcw } from 'lucide-react';
 import ClothCard from '../components/ClothCard';
 import WashingMachine from '../components/WashingMachine';
 
-const API_URL = 'http://127.0.0.1:8000';
+import config from '../config';
+
+const API_URL = config.API_URL;
 
 const UserPage = () => {
     const [clothes, setClothes] = useState([]);

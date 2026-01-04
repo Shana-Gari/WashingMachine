@@ -7,9 +7,14 @@ models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 
+import os
+
+origins_str = os.getenv("ALLOWED_ORIGINS", "*")
+origins = [origin.strip() for origin in origins_str.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow all for verifying locally easily
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
